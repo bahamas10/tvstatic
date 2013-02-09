@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+	<head>
+		<title>TV Static</title>
+		<script src="tvstatic.js"></script>
+		<script>
+		window.requestAnimFrame = window.requestAnimationFrame       ||
+					  window.webkitRequestAnimationFrame ||
+					  window.mozRequestAnimationFrame    ||
+					  window.oRequestAnimationFrame      ||
+					  window.msRequestAnimationFrame     ||
+					  function(callback){
+						window.setTimeout(callback, 1000 / 60);
+					  };
+
+		var canvas, ctx;
+		window.addEventListener('load', load, false);
+		window.addEventListener('resize', resize, false);
+		function load() {
+			canvas = document.getElementById('canvas');
+			ctx = canvas.getContext('2d');
+			ctx.fillStyle = '#000';
+			resize();
+			requestAnimFrame(render);
+		}
+
+		function resize() {
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		}
+
+		function render() {
+			requestAnimFrame(render);
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			tvstatic(canvas, ctx, 2);
+		}
+		</script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			html, body {
+				width: 100%;
+				height: 100%;
+			}
+			#canvas {
+				display: block;
+				-moz-box-shadow: inset 0 0 100px #000;
+				-webkit-box-shadow: inset 0 0 100px #000;
+				box-shadow: inset 0 0 100px #000;
+				z-index: 2;
+				content: "";
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas"></canvas>
+	</body>
+</html>
