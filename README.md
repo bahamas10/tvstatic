@@ -5,6 +5,8 @@ Generate TV static in an HTML5 canvas element
 
 View the demo online http://bahamas10.github.com/tvstatic/
 
+![screenshot](http://www.daveeddy.com/static/media/github/static.png)
+
 Usage
 -----
 
