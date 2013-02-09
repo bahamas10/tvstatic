@@ -34,7 +34,7 @@ Usage
 tvstatic()
 ----------
 
-### `tvstatic(canvas, ctx, [scale])
+### `tvstatic(canvas, ctx, [scale])`
 
 - `canvas`: the canvas object on which to overlay static
 - `ctx`: the 2d context of the canvas above
